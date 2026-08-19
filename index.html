@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ISC Flat File Requirements Dashboard">
+  <title>ISC Flat File Requirements Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>ISC Flat File Requirements</h1>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro section-shell" aria-label="Dashboard introduction">
+      <div class="intro-grid">
+        <div>
+          <p>The ISC Flat File Requirements Dashboard serves as the centralized knowledge hub for all processes related to preparing, submitting, and managing flat files across our business operations. It provides clear, step-by-step guidance, standardized templates, naming conventions, formatting requirements, and best practices to ensure every file upload aligns with established data governance and system compatibility standards.</p>
+          <p>In addition to process documentation, the dashboard outlines ownership responsibilities, update cadences, and common troubleshooting steps. Users can reference this site to understand where and how to upload flat files, required approvals, system access instructions, and the controls in place to maintain accuracy and consistency.</p>
+          <p>Whether you are submitting a routine file or supporting a new business case, the dashboard is your authoritative source for everything needed to confidently prepare and upload flat files.</p>
+        </div>
+        <ol class="process-list">
+          <li>Access the flat file template.</li>
+          <li>Create a new file using the template naming convention. Save as a .CSV file.<br><span>Some files add information to existing data; others are completely new data. This is dependent on the type.</span></li>
+          <li>Remove the old file from the MoveIT folder and upload the new file.</li>
+          <li>Submit a service ticket to the Analytics Operations team if required.</li>
+        </ol>
+      </div>
+    </section>
+
+    <nav class="section-nav" aria-label="Dashboard sections">
+      <a href="#templates">Templates</a>
+      <a href="#access">MoveIT Access</a>
+      <a href="#rules">Rules &amp; Failure Modes</a>
+      <a href="#defects">Defect Reports</a>
+      <a href="#decision-log">Decision Log</a>
+    </nav>
+
+    <section id="templates" class="section-shell templates" aria-labelledby="templates-heading">
+      <div class="heading-row">
+        <div>
+          <h2 id="templates-heading">Flat File Dashboard/ Templates</h2>
+          <p>Download the appropriate template, complete it according to the rules, then upload it to the listed MoveIT location.</p>
+        </div>
+        <div class="heading-actions">
+          <a class="button" href="assets/Flat File Templates.zip" download>Download all templates</a>
+          <aside class="defect-key"><span class="defect-dot"></span> Defect report available</aside>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Data model</th><th>Flat-file template</th><th>Owner</th><th>Frequency</th><th>Type</th><th>MoveIT folder path</th></tr></thead>
+          <tbody id="template-table"></tbody>
+        </table>
+      </div>
+      <p class="table-note">Select a file name to view the template. Links may require company authentication.</p>
+    </section>
+
+    <section id="access" class="dark-section">
+      <div class="section-shell access-grid">
+        <div class="access-content">
+          <h2>MoveIT Access</h2>
+          <h3>Request Access to MoveIT:</h3>
+          <ul><li>Use the following link:</li></ul>
+          <div class="button-row request-form-button"><a class="button" href="https://honeywellaerospace.service-now.com/itdirect?id=sc_cat_item&amp;sys_id=2cece91fdb060f4092773220ad96199c" target="_blank" rel="noopener">IT Applications Request Form</a></div>
+          <ul><li>Use the following path: <strong>Request Services / Application Services / IT Applications</strong></li><li>Follow the specific folder request when making the initial access request.</li></ul>
+          <h3>Request Access to Specific Folders:</h3>
+          <ul><li>Fill out the form with the appropriate information, including details such as:<ul><li>Folder name</li><li>Reason for Access</li><li>Your Contact Information</li></ul></li><li>MoveIT Server Links:</li></ul>
+          <div class="button-row server-buttons"><a class="button button-outline" href="https://hftp.honeywellaerospace.com/" target="_blank" rel="noopener">Production Server</a><a class="button button-outline" href="https://qhftp.honeywellaerospace.com/" target="_blank" rel="noopener">QA Server</a></div>
+          <p>By following these steps, you will be able to gain access to the designated folder for placing the file. If you have any further questions or need assistance, feel free to reach out to james.orcutt@honeywellaerospace.us.</p>
+          <p>Use the following link to know more:</p>
+          <a class="button access-standards" href="https://confluence.honaero.com/display/EDW2020/MoveIT+File+Standards" target="_blank" rel="noopener">MoveIT Access and File Formats</a>
+        </div>
+        <aside class="access-form">
+          <div class="access-form-stack">
+            <figure class="instruction-image request-image">
+              <img src="assets/MoveIT Request.png" alt="MoveIT request form showing how to request access to the necessary folder" onerror="this.closest('.instruction-image').hidden = true">
+              <figcaption>Complete the form using the indicated service path and requested folder.</figcaption>
+            </figure>
+            <p class="access-form-note"><strong>NOTE:</strong> Please avoid mentioning all subfolders as they require the list of folders to apply least privilege standard.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="rules" class="rules-section">
+      <div class="section-shell"><h2>Rules/ Failure Modes</h2><div class="risk-grid"><div class="risk-span"><p>Please consider the following:</p><ol><li><strong>Multiple Failure Points:</strong> Flat files introduce several potential failure points during the ingestion process. These include issues related to file format, encoding, and data consistency. Any failure at these points can disrupt the entire data pipeline.</li><li><strong>Manual Errors:</strong> Manually creating, editing, or managing flat files increases the risk of human errors. Typos, incorrect delimiters, and misaligned data can lead to inaccurate results and downstream issues.</li><li><strong>Limited Scalability:</strong> Flat files are not designed for large-scale data processing. As our data volumes grow, relying on flat files becomes increasingly inefficient and impractical.</li><li><strong>Maintenance Overhead:</strong> Managing flat files involves ongoing maintenance tasks such as monitoring, version control, and access permissions. These overheads can be minimized by adopting more robust data ingestion methods.</li></ol></div><div class="csv-callout"><h3>Save as CSV with UTF-8 encoding</h3><p>The flat file must be saved as a <strong>.CSV</strong> file. In Excel, use <strong>Save As</strong> and select a CSV format with <strong>UTF-8 encoding</strong>.</p></div><div><h3>FORMAT/ RULES:</h3><ol><li>The flat file should be saved as a <strong>.CSV</strong> file.<ul><li>File should not have duplicate rows. If duplicates exist only the first entry will be loaded.</li></ul></li><li>Use the <strong>Save As</strong> option from Excel to create a CSV file with <strong>UTF-8 encoding</strong>.</li><li>Adhere to the following specifications.<ul><li><strong>File Compression:</strong> The file should not be compressed.</li><li><strong>Record Delimiter:</strong> Use a new line (\n) as the record delimiter.</li><li><strong>Field Delimiter:</strong> Separate fields using a comma (,).</li><li><strong>Quoting:</strong> Enclose fields containing commas within double quotes (&quot;) to avoid parsing issues.</li><li><strong>Escape Character:</strong> Use a backslash (\) to escape double quotes within field values.</li><li><strong>Header Row:</strong> Include a header row with column names.</li><li><strong>Encoding:</strong> Save the file with UTF-8 without BOM.</li><li><strong>Single Sheet:</strong> Keep only one sheet per workbook.</li><li><strong>Password Protection:</strong> The file should not be password protected.</li><li><strong>Numeric Fields:</strong> Remove thousand separators (e.g. 1,456 to 1456).</li><li><strong>Currency Symbols:</strong> Remove any currency symbols (e.g. $) and M signs from amount fields.</li><li><strong>Percentage Fields:</strong> Remove the percentage sign (e.g. 13.6% to 13.6).</li><li><strong>No Empty Rows:</strong> Remove the entire row if the data has been deleted.</li></ul></li></ol></div><div><h3>NAMING CONVENTIONS:</h3><ul><li>For the XREF use case, follow the naming pattern: <code>EDW_AERO_ISC_*</code><ul><li>Example: <code>EDW_AERO_ISC_XREF_NON_SAP_SITES.csv</code></li></ul></li></ul><h3>FINAL NOTES:</h3><ul><li>Confirm the file name and format are accurate.</li><li>Verify the file is uploaded to the correct folder.</li><li>Ensure the new file contains all required information, not only the updated data.<ul><li>Use the most current version of the file.</li></ul></li><li>Confirm that the file is uploaded to the folder path in the example below.</li></ul><figure class="instruction-image"><img </div></div></div>
+    </section>
+
+    <section id="defects" class="dark-section defects"><div class="section-shell"><h2>Defect Reports</h2><p class="defect-intro">We validate some flat file uploads by cross-referencing plant and material master data. The reports below include defect indicators that flag values in the flat files that do not match the master documents, and when these discrepancies occur, the system prevents the files from being uploaded. The defect log itself also provides a generalized explanation of how each failure is triggered.</p><p class="defect-intro">Once files are successfully loaded, these indicators must be reviewed to ensure no records have been dropped. To support efficient troubleshooting, an additional column identifies exactly which entries contain defects, enabling teams to quickly locate and correct misaligned data.</p><p class="attention">Attention: Please check the defect logs if they exist for the flat file being uploaded.</p><div class="defect-list"><span>VW_ISC_MATERIAL_PLANT_BASELINE_PRICE_DEFECT</span><span>VW_ISC_XREF_IOS_WAIVER_DEFECT</span><span>VW_ISC_XREF_IOS_DEMAND_DEFECT</span><span>VW_ISC_SUPPLIER_SCORECARD_BASELINE_DEFECT</span></div></div></section>
+
+    <section id="decision-log">
+      <div class="section-shell split-section">
+        <div><h2>Document the Exception - EDW Decision Log</h2><p>Document each flat-file exception in the EDW Decision Log before implementation.</p><a class="button" href="https://confluence.honaero.com/display/EDW2020/EDW+Decision+Log" target="_blank" rel="noopener">Access EDW Decision Log</a></div>
+        <ul class="check-list"><li><strong>Why the file is needed:</strong> State the business need.</li><li><strong>File owner:</strong> Identify the responsible owner or team.</li><li><strong>Submission process:</strong> Specify who submits the file.</li><li><strong>Processing frequency:</strong> Define the expected cadence.</li><li><strong>Future mitigation:</strong> Describe the planned automated replacement.</li></ul>
+      </div>
+    </section>
+
+    <section class="section-shell contacts" aria-label="Contact and recommendations"><p>If you have any questions or encounter any issues during this process, please contact Chenin Rogers (chenin.rogers@honeywellaerospace.com), Ranga Kodiugane (ranganath.kodiugane1@honeywellaerospace.com), or James Orcutt (james.orcutt@honeywellaerospace.us).</p><p class="warning"><strong>WARNING:</strong> The use of flat files for data ingestion into our Enterprise Data Warehouse (EDW) is <strong>strongly discouraged.</strong></p><p>Recommendations:</p><ul><li>Avoid using flat files for data ingestion.</li><li>Explore other methods: direct database connections, API-based ingestion, or streaming pipelines.</li><li>For Flat File use follow set-up guidelines, proper file naming conventions, directory structures, and automated processes.</li></ul></section>
+  </main>
+  <footer><p>ISC Flat File Requirements Dashboard</p><p>Internal source links are clearly identified and may require company access.</p></footer>
+  <script src="app.js"></script>
+</body>
+</html>
