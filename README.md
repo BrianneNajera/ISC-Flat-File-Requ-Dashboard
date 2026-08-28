@@ -8,7 +8,6 @@ This is a static website documenting the ISC flat-file process, templates, owner
 - `styles.css`: Styling, spacing, and table column widths.
 - `app.js`: Dashboard row data and template links.
 - `assets/`: Template files, CSV examples, and instructional images.
-- `.github/workflows/deploy-pages.yml`: GitHub Pages deployment workflow.
 
 ## Test Locally
 
@@ -26,9 +25,10 @@ Check that the table loads, template links open, long text wraps correctly, and 
 
 1. Push changes to the `main` branch.
 2. In GitHub, open **Settings > Pages**.
-3. Set the source to **GitHub Actions**.
-4. Open **Actions** and confirm the deployment completes.
-5. Open the live URL shown in **Settings > Pages**.
+3. Set the source to **Deploy from a branch**.
+4. Select branch **main** and folder **/ (root)**.
+5. Save and wait for the Pages build to complete.
+6. Open the live URL shown in **Settings > Pages**.
 
 If you cannot access repository Settings or Pages, ask a GitHub Enterprise administrator to grant repository settings access or enable GitHub Pages for the repository.
 
