@@ -31,7 +31,8 @@ const templates = [
   ['XREF_SUPPLIER_CHRONIC_RANK_SCORE', 'EDW_AERO_ISC_CHRONIC_RANK.xlsx', 'FC167064-DCCE-4734-A8CA-6F19B519F8A9', 'Sourcing: Kueyson Yee', 'Monthly', 'Automated'],
   ['XREF_CUSTOMER_SHORTAGE_REPORT', 'EDW_AERO_ISC_SHORTAGE_REPORT.xlsx', '38446672-342D-4222-A490-9574137D2AAB', 'Planning: Clark McClurg', 'Daily', 'Automated'],
   ['FACT_COCKPIT_METRICS', 'CockpitDataExport.xlsx', null, 'ISC Analytics: Nicole Nasta', 'Weekly', 'Automated', false, false, 'assets/CockpitDataExport.xlsx'],
-  ['XREF_PART_COMMODITY_FAMILY_CODE', 'XREF_PART_COMMODITY_FAMILY_CODE.xlsx', null, 'Currently no owner', 'As needed', 'Manual', false, false, 'assets/XREF_PART_COMMODITY_FAMILY_CODE.xlsx']
+  ['EDW_AERO_ISC_KEYCODE_ORG', 'EDW_AERO_ISC_KEYCODE_ORG.xlsx', '', 'TBD', 'Weekly', 'Automated', false, true],
+  ['XREF_PART_COMMODITY_FAMILY_CODE', 'XREF_PART_COMMODITY_FAMILY_CODE.xlsx', null, 'TBD', 'As needed', 'Manual', false, false, 'assets/XREF_PART_COMMODITY_FAMILY_CODE.xlsx']
 ];
 
 const xrefTablePath = '/Distribution / CORP / EDW_GENERAL / LANDING / ISC / XREF_TABLES';
@@ -44,12 +45,12 @@ for (const [model, file, id, owner, frequency, type, defect, pending, externalUr
   const localAssetUrl = externalUrl ? externalUrl.replace(/\.xlsx$/i, '.csv').replace(/^assets\//, 'assets/template-csv/') : null;
   const url = localAssetUrl || csvUrl;
   const displayFile = file.replace(/\.xlsx$/i, '.csv');
-  const link = url ? `<a class="template-link" href="${url}" target="_blank" rel="noopener">${displayFile}</a>` : `<span class="template-link pending">${displayFile}</span>`;
+  const link = !url ? `<span class="template-link pending">${displayFile}</span>` : `<a class="template-link${pending ? ' pending' : ''}" href="${url}" target="_blank" rel="noopener">${displayFile}</a>`;
   const typeValue = defect ? `<span class="type-with-indicator">${type}<span class="defect-dot defect-inline" aria-label="Defect report available"></span></span>` : type;
   const modelCell = renderedModels.has(model) ? '' : `<td class="data-model" rowspan="${modelCounts[model]}">${model}</td>`;
   renderedModels.add(model);
   const pathValue = model.includes('IOS') || model.includes('IOS_WAIVER') ? iosPath : xrefTablePath;
-  table.insertAdjacentHTML('beforeend', `<tr>${modelCell}<td>${link}</td><td>${owner}</td><td>${frequency}</td><td>${typeValue}</td><td class="path">${pending ? 'To be confirmed' : pathValue}</td></tr>`);
+  table.insertAdjacentHTML('beforeend', `<tr>${modelCell}<td>${link}</td><td>${owner}</td><td>${frequency}</td><td>${typeValue}</td><td class="path">${pending ? 'TBD' : pathValue}</td></tr>`);
 }
 
 document.querySelectorAll('.instruction-image img').forEach((image) => {
