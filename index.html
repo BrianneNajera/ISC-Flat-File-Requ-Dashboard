@@ -14,6 +14,7 @@
     <a href="#rules">Rules &amp; Failure Modes</a>
     <a href="#defects">Defect Reports</a>
     <a href="#decision-log">Decision Log</a>
+    <a href="#site-content">Site Content</a>
   </nav>
 
   <header class="hero">
@@ -36,6 +37,8 @@
         </ol>
       </div>
     </section>
+
+    <div class="section-divider" aria-hidden="true"></div>
 
     <section id="templates" class="section-shell templates" aria-labelledby="templates-heading">
       <div class="heading-row">
@@ -95,6 +98,13 @@
         <div><h2>Document the Exception - EDW Decision Log</h2><p>Document each flat-file exception in the EDW Decision Log before implementation.</p><a class="button" href="https://confluence.honaero.com/display/EDW2020/EDW+Decision+Log" target="_blank" rel="noopener">Access EDW Decision Log</a></div>
         <ul class="check-list"><li><strong>Why the file is needed:</strong> State the business need.</li><li><strong>File owner:</strong> Identify the responsible owner or team.</li><li><strong>Submission process:</strong> Specify who submits the file.</li><li><strong>Processing frequency:</strong> Define the expected cadence.</li><li><strong>Future mitigation:</strong> Describe the planned automated replacement.</li></ul>
       </div>
+    </section>
+
+    <section id="site-content" class="section-shell site-content" aria-labelledby="site-content-heading">
+      <h2 id="site-content-heading">Site Content</h2>
+      <p>The ISC Flat File Requirements Dashboard serves as the centralized knowledge hub for all processes related to preparing, submitting, and managing flat files across our business operations. It provides clear, step-by-step guidance, standardized templates, naming conventions, formatting requirements, and best practices to ensure every file upload aligns with established data governance and system compatibility standards.</p>
+      <p>In addition to process documentation, the dashboard outlines ownership responsibilities, update cadences, and common troubleshooting steps. Users can reference this site to understand where and how to upload flat files, required approvals, system access instructions, and the controls in place to maintain accuracy and consistency.</p>
+      <p>Whether you are submitting a routine file or supporting a new business case, the dashboard is your authoritative source for everything needed to confidently prepare and upload flat files.</p>
     </section>
 
     <section class="section-shell contacts" aria-label="Contact and recommendations"><p>If you have any questions or encounter any issues during this process, please contact Chenin Rogers (chenin.rogers@honeywellaerospace.com), Ranga Kodiugane (ranganath.kodiugane1@honeywellaerospace.com), or James Orcutt (james.orcutt@honeywellaerospace.us).</p><p class="warning"><strong>WARNING:</strong> The use of flat files for data ingestion into our Enterprise Data Warehouse (EDW) is <strong>strongly discouraged.</strong></p><p>Recommendations:</p><ul><li>Avoid using flat files for data ingestion.</li><li>Explore other methods: direct database connections, API-based ingestion, or streaming pipelines.</li><li>For Flat File use follow set-up guidelines, proper file naming conventions, directory structures, and automated processes.</li></ul></section>
