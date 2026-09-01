@@ -24,15 +24,15 @@ const templates = [
   ['XREF_ISC_MATERIAL_PLANT_BASELINE_PRICE', 'EDW_AERO_ISC_XREF_MATERIAL_PLANT_BASELINE_PRICE.xlsx', 'B37D516E-3642-49BD-BB4E-9D360CA708D4', 'Sourcing: Prathap Kaggala', 'As needed', 'Manual', true],
   ['XREF_PAYMENT_CALENDAR', 'PAYMENT_CALENDAR_AERO.xlsx', '016D3497-6252-48F2-9989-21F77EC48B51', 'Sourcing: Nitish Ganiga', 'Yearly', 'Manual'],
   ['XREF_DOLPHIN_AP_HOLIDAY_CALENDAR', 'EDW_AERO_ISC_DOLPHIN_AP_HOLIDAY_CALENDAR.xlsx', '0E17B034-1BC5-4414-A6A6-AF169953DC63', 'Sourcing: Nitish Ganiga', 'Yearly', 'Manual'],
-  ['FACT_AOP_METRICS', 'EDW_AERO_ISC_AOP_METRIC_INVENTO.xlsx', '2F1B0C62-E87F-4AF2-94C7-438ECF8652B7', 'Net Inventory: Brad Schneider', 'Yearly', 'Manual'],
+  ['FACT_AOP_METRICS', 'EDW_AERO_ISC_AOP_METRIC_INVENTORY.xlsx', '2F1B0C62-E87F-4AF2-94C7-438ECF8652B7', 'Net Inventory: Brad Schneider', 'Yearly', 'Manual'],
   ['XREF_SOURCING_HIERARCHY', 'EDW_AERO_ISC_SOURCING_HIERARCHY.xlsx', '9822BF27-D6E3-4106-A8F0-205FDD1E3CC0', 'Sourcing: Tom Roberts', 'Daily', 'Automated'],
   ['XREF_ISC_VMI_SIGNED_VS_TARGETED_DATA', 'EDW_AERO_ISC_VMISignedvaTargetedData.xlsx', 'C62E7400-DA61-425E-AF68-17283901B75A', 'Sourcing: Tom Roberts', 'Weekly', 'Automated'],
   ['XREF_PLANT_CELL_CONFIG', 'EDW_AERO_ISC_PLANT_CELL_CONFIG.xlsx', '585E8C2B-34C3-429C-AA82-3D452826ED3D', 'ISC Analytics: Gene Aguas', 'Daily', 'Automated'],
-  ['XREF_SUPPLIER_CHRONIC_RANK_SCORE', 'EDW_AERO_ISC_CHRONIC_RANK.xlsx', 'FC167064-DCCE-4734-A8CA-6F19B519F8A9', 'Sourcing: Kueyson Yee', 'Monthly', 'Automated'],
-  ['XREF_CUSTOMER_SHORTAGE_REPORT', 'EDW_AERO_ISC_SHORTAGE_REPORT.xlsx', '38446672-342D-4222-A490-9574137D2AAB', 'Planning: Clark McClurg', 'Daily', 'Automated'],
+  ['XREF_MATERIAL_PLANT_CHRONIC_RANK', 'EDW_AERO_ISC_CHRONIC_RANK.xlsx', 'FC167064-DCCE-4734-A8CA-6F19B519F8A9', 'Sourcing: Kueyson Yee', 'Monthly', 'Automated'],
+  ['XREF_CUSTOMER_SHORTAGE_PEGGING', 'EDW_AERO_ISC_SHORTAGE_REPORT.xlsx', '38446672-342D-4222-A490-9574137D2AAB', 'Planning: Clark McClurg', 'Daily', 'Automated'],
   ['FACT_COCKPIT_METRICS', 'CockpitDataExport.xlsx', null, 'ISC Analytics: Nicole Nasta', 'Weekly', 'Automated', false, false, 'assets/CockpitDataExport.xlsx'],
   ['XREF_KEYCODE_ORG', 'EDW_AERO_ISC_KEYCODE_ORG.xlsx', '', 'TBD', 'Weekly', 'Automated', false, true],
-  ['XREF_PART_COMMODITY_FAMILY_CODE', 'XREF_PART_COMMODITY_FAMILY_CODE.xlsx', null, 'TBD', 'As needed', 'Manual', false, false, 'assets/XREF_PART_COMMODITY_FAMILY_CODE.xlsx']
+  ['XREF_PART_FAMILY_CODE', 'XREF_PART_FAMILY_CODE.xlsx', null, 'TBD', 'As needed', 'Manual', false, false, 'assets/XREF_PART_FAMILY_CODE.xlsx']
 ];
 
 const xrefTablePath = '/Distribution / CORP / EDW_GENERAL / LANDING / ISC / XREF_TABLES';
