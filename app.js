@@ -28,7 +28,7 @@ const templates = [
   ['XREF_SOURCING_HIERARCHY', 'EDW_AERO_ISC_SOURCING_HIERARCHY.xlsx', '9822BF27-D6E3-4106-A8F0-205FDD1E3CC0', 'Sourcing: Tom Roberts', 'Daily', 'Automated'],
   ['XREF_ISC_VMI_SIGNED_VS_TARGETED_DATA', 'EDW_AERO_ISC_VMISignedvaTargetedData.xlsx', 'C62E7400-DA61-425E-AF68-17283901B75A', 'Sourcing: Tom Roberts', 'Weekly', 'Automated'],
   ['XREF_PLANT_CELL_CONFIG', 'EDW_AERO_ISC_PLANT_CELL_CONFIG.xlsx', '585E8C2B-34C3-429C-AA82-3D452826ED3D', 'ISC Analytics: Gene Aguas', 'Daily', 'Automated'],
-  ['XREF_MATERIAL_PLANT_CHRONIC_RANK', 'EDW_AERO_ISC_CHRONIC_RANK.xlsx', 'FC167064-DCCE-4734-A8CA-6F19B519F8A9', 'Sourcing: Kueyson Yee', 'Monthly', 'Automated'],
+  ['XREF_SUPPLIER_CHRONIC_RANK_SCORE', 'EDW_AERO_ISC_CHRONIC_RANK.xlsx', 'FC167064-DCCE-4734-A8CA-6F19B519F8A9', 'Sourcing: Kueyson Yee', 'Monthly', 'Automated'],
   ['XREF_CUSTOMER_SHORTAGE_PEGGING', 'EDW_AERO_ISC_SHORTAGE_REPORT.xlsx', '38446672-342D-4222-A490-9574137D2AAB', 'Planning: Clark McClurg', 'Daily', 'Automated'],
   ['FACT_COCKPIT_METRICS', 'CockpitDataExport.xlsx', null, 'ISC Analytics: Nicole Nasta', 'Weekly', 'Automated', false, false, 'assets/CockpitDataExport.xlsx'],
   ['XREF_KEYCODE_ORG', 'EDW_AERO_ISC_KEYCODE_ORG.xlsx', '', 'TBD', 'Weekly', 'Automated', false, true],
