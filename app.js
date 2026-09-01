@@ -32,7 +32,7 @@ const templates = [
   ['XREF_CUSTOMER_SHORTAGE_PEGGING', 'EDW_AERO_ISC_SHORTAGE_REPORT.xlsx', '38446672-342D-4222-A490-9574137D2AAB', 'Planning: Clark McClurg', 'Daily', 'Automated'],
   ['FACT_COCKPIT_METRICS', 'CockpitDataExport.xlsx', null, 'ISC Analytics: Nicole Nasta', 'Weekly', 'Automated', false, false, 'assets/CockpitDataExport.xlsx'],
   ['XREF_KEYCODE_ORG', 'EDW_AERO_ISC_KEYCODE_ORG.xlsx', '', 'TBD', 'Weekly', 'Automated', false, true],
-  ['XREF_PART_FAMILY_CODE', 'XREF_PART_FAMILY_CODE.xlsx', null, 'TBD', 'As needed', 'Manual', false, false, 'assets/XREF_PART_FAMILY_CODE.xlsx']
+  ['XREF_PART_COMMODITY_FAMILY_CODE', 'XREF_PART_FAMILY_CODE.xlsx', null, 'TBD', 'As needed', 'Manual', false, false, 'assets/XREF_PART_FAMILY_CODE.xlsx']
 ];
 
 const xrefTablePath = '/Distribution / CORP / EDW_GENERAL / LANDING / ISC / XREF_TABLES';
