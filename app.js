@@ -24,7 +24,7 @@ const templates = [
   ['XREF_ISC_MATERIAL_PLANT_BASELINE_PRICE', 'EDW_AERO_ISC_XREF_MATERIAL_PLANT_BASELINE_PRICE.xlsx', 'B37D516E-3642-49BD-BB4E-9D360CA708D4', 'Sourcing: Prathap Kaggala', 'As needed', 'Manual', true],
   ['XREF_PAYMENT_CALENDAR', 'PAYMENT_CALENDAR_AERO.xlsx', '016D3497-6252-48F2-9989-21F77EC48B51', 'Sourcing: Nitish Ganiga', 'Yearly', 'Manual'],
   ['XREF_DOLPHIN_AP_HOLIDAY_CALENDAR', 'EDW_AERO_ISC_DOLPHIN_AP_HOLIDAY_CALENDAR.xlsx', '0E17B034-1BC5-4414-A6A6-AF169953DC63', 'Sourcing: Nitish Ganiga', 'Yearly', 'Manual'],
-  ['FACT_AOP_METRICS', 'EDW_AERO_ISC_AOP_METRIC_INVENTORY.xlsx', '2F1B0C62-E87F-4AF2-94C7-438ECF8652B7', 'Net Inventory: Brad Schneider', 'Yearly', 'Manual'],
+  ['FACT_AOP_METRICS', 'EDW_AERO_ISC_AOP_METRIC_INVENTO.xlsx', '2F1B0C62-E87F-4AF2-94C7-438ECF8652B7', 'Net Inventory: Brad Schneider', 'Yearly', 'Manual'],
   ['XREF_SOURCING_HIERARCHY', 'EDW_AERO_ISC_SOURCING_HIERARCHY.xlsx', '9822BF27-D6E3-4106-A8F0-205FDD1E3CC0', 'Sourcing: Tom Roberts', 'Daily', 'Automated'],
   ['XREF_ISC_VMI_SIGNED_VS_TARGETED_DATA', 'EDW_AERO_ISC_VMISignedvaTargetedData.xlsx', 'C62E7400-DA61-425E-AF68-17283901B75A', 'Sourcing: Tom Roberts', 'Weekly', 'Automated'],
   ['XREF_PLANT_CELL_CONFIG', 'EDW_AERO_ISC_PLANT_CELL_CONFIG.xlsx', '585E8C2B-34C3-429C-AA82-3D452826ED3D', 'ISC Analytics: Gene Aguas', 'Daily', 'Automated'],
@@ -51,6 +51,37 @@ for (const [model, file, id, owner, frequency, type, defect, pending, externalUr
   renderedModels.add(model);
   const pathValue = model.includes('IOS') || model.includes('IOS_WAIVER') ? iosPath : xrefTablePath;
   table.insertAdjacentHTML('beforeend', `<tr>${modelCell}<td>${link}</td><td>${owner}</td><td>${frequency}</td><td>${typeValue}</td><td class="path">${pending ? 'TBD' : pathValue}</td></tr>`);
+}
+
+const defectSection = document.querySelector('#defects');
+if (defectSection) {
+  defectSection.insertAdjacentHTML('beforebegin', `
+    <section id="ad-hoc-ticket" class="ad-hoc-section">
+      <div class="section-shell ad-hoc-grid">
+        <div>
+          <h2>Submit an Ad-Hoc Ticket</h2>
+          <p>For any service requests like ad-hoc job run or enhancements for ops team you can use below.</p>
+          <a class="button" href="https://honeywellaerospace.service-now.com/itdirect?id=sc_cat_item&amp;sys_id=9716695bdbc20f4092773220ad9619e3" target="_blank" rel="noopener">Analytics Applications - IT Direct</a>
+          <h3>Complete the request</h3>
+          <ul class="ticket-steps">
+            <li><strong>Requested for:</strong> Your name</li>
+            <li><strong>Application:</strong> Analytics</li>
+            <li><strong>SBG:</strong> AERO</li>
+            <li><strong>Application:</strong> Snowflake Gov Cloud - Prod</li>
+            <li><strong>Function:</strong> ISC</li>
+            <li><strong>Request type:</strong> Service Request</li>
+            <li><strong>Description:</strong> State the request, flat-file name, and MoveIT-to-Snowflake action.</li>
+          </ul>
+        </div>
+        <aside class="ad-hoc-image-wrap">
+          <figure class="instruction-image">
+            <img src="assets/Screenshot 2026-09-03 145451.png" alt="Analytics Applications IT Direct request form with the required Ad-Hoc ticket selections" onerror="this.closest('.ad-hoc-image-wrap').hidden = true">
+            <figcaption>Complete the request using the selections shown.</figcaption>
+          </figure>
+        </aside>
+      </div>
+    </section>
+  `);
 }
 
 document.querySelectorAll('.instruction-image img').forEach((image) => {
